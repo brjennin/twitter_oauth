@@ -34,18 +34,5 @@ module TwitterOAuth
     def get_friendship(a, b)
       get("/friendships/show.json?source_screen_name=#{a}&target_screen_name=#{b}")
     end
-
-    # Returns list of friends with specified options
-    def friends_list(options={})
-      args = options.map{|k,v| "#{k}=#{v}"}.join('&')
-      get("/friends/list.json?#{args}")
-    end
-
-    # Returns list of followers with specified options
-    def followers_list(options={})
-      args = options.map{|k,v| "#{k}=#{v}"}.join('&')
-      get("/followers/list.json?#{args}")
-    end
-
   end
 end
